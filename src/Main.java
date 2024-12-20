@@ -10,7 +10,13 @@ public class Main {
         char[] ciphertext = in.nextLine().toCharArray();
         char[] output = new char[ciphertext.length];
         for (int i = 0;i < ciphertext.length;i++){
-            output[i] = (char) (ciphertext[i]>>5*key<<key/2+10054>>>5);
+            int outputChar = ciphertext[i];
+            outputChar >>= key/10000;
+            outputChar *=  key/5000;
+            outputChar <<= key/8967;
+            outputChar -= 587;
+            output[i] = (char) outputChar;
+
         }
         System.out.println(output);
     }
