@@ -13,7 +13,7 @@ public class Main {
         System.out.println("这个程序可以加密和解密");
         System.out.println("请输入key");
         String key = in.nextLine();
-        System.out.println("请输入密文");
+        System.out.println("请输入密/明文");
         char[] ciphertext = in.nextLine().toCharArray();
         char[] output = encryptAndDecrypt(ciphertext,key);
         System.out.println(output);
